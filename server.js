@@ -8,7 +8,7 @@ app.use(express.json());
 app.post('/webhook', (req, res) => {
   const { userOp, chainId, projectId } = req.body;
   console.log('Webhook data received:', userOp, chainId, projectId);
-  if (userOp.toString().includes('1231deb6f5749ef6ce6943a275a1d3e7486f4eae')){
+  if (userOp.callData.toString().includes('1231deb6f5749ef6ce6943a275a1d3e7486f4eae')){
     res.json({ proceed: true });   
   }
 
